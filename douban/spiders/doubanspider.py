@@ -85,6 +85,7 @@ class DouBan(scrapy.Spider):
                 try:
                     star = float(star)
                 except:
+                    star = '--'
                     pass
                 item['star'] = star
                 item['intro'] = (re.sub(pata, '', intro)).strip()
