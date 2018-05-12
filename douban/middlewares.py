@@ -101,6 +101,7 @@ class DoubanDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+''''
 import random
 import base64
 from douban.settings import PROXIES
@@ -125,4 +126,4 @@ class ProxyMiddleware(object):
             request.headers['Proxy-Authorization'] = 'Basic'+encoded_user_pass
         else:
             request.meta['proxy'] = "http://%s"%proxy['ip_port']
-
+'''
