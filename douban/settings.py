@@ -34,14 +34,15 @@ USER_AGENT = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20",
     "Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52",
 ]
-
-PROXIES = [
-    {'ip_port': '111.11.228.75:80', 'user_pass': ''},
-    {'ip_port': '120.198.243.22:80', 'user_pass': ''},
-    {'ip_port': '111.8.60.9:8123', 'user_pass': ''},
-    {'ip_port': '101.71.27.120:80', 'user_pass': ''},
-    {'ip_port': '122.96.59.104:80', 'user_pass': ''},
-    {'ip_port': '122.224.249.122:8088', 'user_pass': ''},
+#设置ip代理池
+IPPOOL=[
+    {"ipaddr":"61.129.70.131:8080"},
+    {"ipaddr":"61.152.81.193:9100"},
+    {"ipaddr":"120.204.85.29:3128"},
+    {"ipaddr":"219.228.126.86:8123"},
+    {"ipaddr":"61.152.81.193:9100"},
+    {"ipaddr":"218.82.33.225:53853"},
+    {"ipaddr":"223.167.190.17:42789"}
 ]
 
 # Obey robots.txt rules
@@ -83,12 +84,13 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
+DOWNLOADER_MIDDLEWARES = {
+    #取消默认的useragent,使用新的useragent
     #'douban.middlewares.DoubanDownloaderMiddleware': 543,
- #   'douban.middlewares.RandomUserAgent': 1,
-  #  'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
-  #  'douban.middlewares.ProxyMiddleware': 100,
-#}
+    'douban.middlewares.RandomUserAgentMiddleware': 1,
+    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
+    'douban.middlewares.ProxyMiddleware': 100,
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html

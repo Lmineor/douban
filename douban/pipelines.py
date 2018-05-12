@@ -10,15 +10,16 @@ class DoubanPipeline(object):
     def open_spider(self, spider):
         from openpyxl import Workbook
         self.wb = Workbook()
-        self.sheet =wb.active
+        self.sheet =self.wb.active
         self.sheet.title = "豆瓣图书"
         self.label = ['文学', '流行', '文化', '生活', '经管', '科技']
         self.row = 1
         self.sheet["A%d" % (self.row)].value ='序号'
         self.sheet["B%d" % (self.row)].value = '书名'
-        self.sheet["C%d" % (self.row)].value = '作者及出版社信息'
-        self.sheet["D%d" % (self.row)].value = '评论数'
-        self.sheet["E%d" % (self.row)].value = '简介'
+        self.sheet["C%d" % (self.row)].value = '评论数'
+        self.sheet["D%d" % (self.row)].value = '作者及出版社信息'
+        self.sheet["E%d" % (self.row)].value = '评价'
+        self.sheet["F%d" % (self.row)].value = '简介'
 
 
     def process_item(self, item, spider):

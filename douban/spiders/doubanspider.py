@@ -51,7 +51,7 @@ class DouBan(scrapy.Spider):
             book_label = book.get(sub_label) #book_label 类似于小说，推理等是label下的一个子label
             time.sleep(2)
             for sub_sub_label in book_label:
-                for i in range(50):
+                for i in range(2):
                     start='?start=%s&type=T'%(str(20*i))
                     aurl = 'https://book.douban.com/tag/'+ parse.quote(sub_sub_label)+start
                     #aurl = 'https://book.douban.com/tag/' + parse.quote(sub_sub_label) #获取书的每页url
