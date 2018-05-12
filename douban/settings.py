@@ -36,13 +36,13 @@ USER_AGENT = [
 ]
 #设置ip代理池
 IPPOOL=[
-    {"ipaddr":"61.129.70.131:8080"},
-    {"ipaddr":"61.152.81.193:9100"},
-    {"ipaddr":"120.204.85.29:3128"},
-    {"ipaddr":"219.228.126.86:8123"},
-    {"ipaddr":"61.152.81.193:9100"},
-    {"ipaddr":"218.82.33.225:53853"},
-    {"ipaddr":"223.167.190.17:42789"}
+    {"ipaddr":"49.79.195.221:61234"},
+    {"ipaddr":"60.177.231.76:18118"},
+    {"ipaddr":"123.114.114.31:8118"},
+    {"ipaddr":"221.229.18.134:808"},
+    {"ipaddr":"182.88.5.158:8118"},
+    {"ipaddr":"58.18.147.144:8118"},
+    {"ipaddr":"61.135.217.7:80"}
 ]
 
 # Obey robots.txt rules
@@ -54,7 +54,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16

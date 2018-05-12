@@ -36,7 +36,6 @@ class DoubanPipeline(object):
         self.sheet["D%d" % (self.row)].value = item['info']
         self.sheet["E%d" % (self.row)].value = item['star']
         self.sheet["F%d" % (self.row)].value = item['intro']
-        self.wb.save('book_info.xlsx')
         return item
     def close_spider(self, spider):
         self.wb.save('book_info.xlsx')

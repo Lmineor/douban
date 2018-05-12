@@ -90,14 +90,6 @@ class DouBan(scrapy.Spider):
                 item['star'] = star
                 item['intro'] = (re.sub(pata, '', intro)).strip()
                 yield item
-                #111.200.13.181
-                '''
-                'book_name': '\n\n    一只特立独行的猪\n\n\n    \n\n  ',
-                 'comment_num': ['30035'],
-                'info': '\n        \n  \n  王小波 / 北方文艺出版社 / 2006-4 / 18.80元\n\n      ',
-                'intro': '这本书里除了文化杂文，还有给其他书写的序言与跋语。这些序言与跋语也表明了我的一些态度。除此之外，还有一些轻松的随笔。不管什么书，我都不希望它太严肃，这一本也... ',
-                 'star': 8.8}
-                '''
 
 
 if __name__ == '__main__':
